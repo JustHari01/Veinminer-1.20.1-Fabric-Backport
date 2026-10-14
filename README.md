@@ -6,6 +6,7 @@ This repository contains a community backport of the Fabric Veinminer core and i
 
 - **Veinminer core** (`veinminer`): server-side vein mining and configuration. Install it on the server; for singleplayer, install it in the client instance too.
 - **Veinminer Hotkey** (`veinminer_client`): client-only hotkey, mining preview, and pattern controls. It requires the matching core on the server. The client add-on also declares the core as a client dependency, so install both jars in each client instance that uses Hotkey; singleplayer clients need both jars as well.
+- **Veinminer Enchantment** (`veinminer_enchantment`): adds the Veinmine enchantment and requires this matching core. When installed, the core only vein-mines with an enchanted main-hand tool. Its configurable weight, enchanting costs, and anvil cost are stored in `config/veinminer_enchantment.json`.
 
 The core project already has an older Fabric 1.20.1 release. This backport brings the newer 2.11.2 code line to 1.20.1; it does not replace or claim to be an official upstream update.
 
@@ -14,10 +15,10 @@ The core project already has an older Fabric 1.20.1 release. This backport bring
 Use Java 17 and run:
 
 ```shell
-./gradlew :veinminer:veinminer-fabric:build :veinminer-client:veinminer-client-fabric:build
+./gradlew :veinminer:veinminer-fabric:build :veinminer-client:veinminer-client-fabric:build :veinminer-enchant:build
 ```
 
-The Fabric jars are written to the `veinminer/fabric/build/libs` and `veinminer-client/fabric/build/libs` folders.
+The Fabric jars are written to the `veinminer/fabric/build/libs`, `veinminer-client/fabric/build/libs`, and `veinminer-enchant/build/libs` folders.
 
 ## Validation
 

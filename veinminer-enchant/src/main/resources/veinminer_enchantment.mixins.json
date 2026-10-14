@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "de.miraculixx.veinminerEnchant.fabric.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AnvilMenuMixin",
+    "EnchantmentInstanceMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

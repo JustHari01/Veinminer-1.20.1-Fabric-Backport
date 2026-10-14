@@ -2,15 +2,16 @@
   "schemaVersion": 1,
   "id": "veinminer_enchantment",
   "version": "${version}",
-  "name": "Veinminer Enchantment",
-  "description": "Addon for Veinminer to add an exclusive enchantment",
+  "name": "Veinminer Enchantment 1.20.1 Fabric Backport",
+  "description": "Unofficial community backport of Veinminer Enchantment for Minecraft 1.20.1 Fabric",
   "authors": [
-    "Miraculixx"
+    "Miraculixx",
+    "JustHari01"
   ],
   "license": "${license}",
   "icon": "assets/veinminer_enchantment/icon.png",
   "contact": {
-    "homepage": "https://modrinth.com/mod/veinminer-enchantment",
+    "homepage": "https://github.com/JustHari01/Veinminer-1.20.1-Fabric-Backport",
     "issues": "https://dc.mutils.net"
   },
   "environment": "*",
@@ -19,7 +20,9 @@
       "de.miraculixx.veinminerEnchant.fabric.VeinminerEnchantment"
     ]
   },
-  "mixins": [],
+  "mixins": [
+    "veinminer_enchantment.mixins.json"
+  ],
   "custom": {
     "modmenu": {
       "parent": {
@@ -32,9 +35,10 @@
   },
   "depends": {
     "fabricloader": ">=0.19.0",
-    "minecraft": ">=1.21",
+    "minecraft": "1.20.1",
     "java": ">=17",
     "fabric-language-kotlin": "*",
-    "veinminer": "*"
+    "fabric-api": "*",
+    "veinminer": ">=2.11.2-hari.1"
   }
 }

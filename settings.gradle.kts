@@ -16,6 +16,7 @@ include(":veinminer:common")
 include(":veinminer:fabric")
 include(":veinminer-client:common")
 include(":veinminer-client:fabric")
+include(":veinminer-enchant")
 
 // Give the nested modules unique names so Gradle resolves both `common` modules.
 project(":veinminer:common").name = "veinminer-common"

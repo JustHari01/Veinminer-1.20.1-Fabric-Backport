@@ -51,15 +51,17 @@ dependencies {
     //
     // Permissions configuration
     //
-    val fabricPermAPI by properties // doesn't update their version tags good enough for auto...
-    val fabricPermissions = "me.lucko:fabric-permissions-api:$fabricPermAPI"
-    add("modCompileOnly", fabricPermissions) {
-        exclude(group = "net.fabricmc.fabric-api", module = "fabric-api-bom")
+    if (project.path == ":veinminer:veinminer-fabric") {
+        val fabricPermAPI by properties // doesn't update their version tags good enough for auto...
+        val fabricPermissions = "me.lucko:fabric-permissions-api:$fabricPermAPI"
+        add("modCompileOnly", fabricPermissions) {
+            exclude(group = "net.fabricmc.fabric-api", module = "fabric-api-bom")
+        }
+        add("modLocalRuntime", fabricPermissions) {
+            exclude(group = "net.fabricmc.fabric-api", module = "fabric-api-bom")
+        }
+        include(fabricPermissions)
     }
-    add("modLocalRuntime", fabricPermissions) {
-        exclude(group = "net.fabricmc.fabric-api", module = "fabric-api-bom")
-    }
-    include(fabricPermissions)
 
     // Add all non-mod dependencies to the jar
     transitiveInclude.resolvedConfiguration.resolvedArtifacts.forEach {
@@ -82,18 +84,24 @@ loom {
 }
 
 tasks.processResources {
-    val modrinthSlug = when (properties["modid"] as String) {
+    val modId = when (project.path) {
+        ":veinminer-client:veinminer-client-fabric" -> "veinminer_client"
+        ":veinminer-enchant" -> "veinminer_enchantment"
+        else -> properties["modid"] as String
+    }
+    val modrinthSlug = when (modId) {
         "veinminer" -> properties["modrinthId"] as String
         "veinminer_client" -> properties["modrinthClientId"] as String
         else -> properties["modrinthProjectId"] as? String ?: properties["modid"] as String
     }
+    val componentLicence = properties["fabricLicense.$modId"] as? String ?: properties["licence"] as String
     val expansion = mapOf(
-        "modid" to properties["modid"] as String,
+        "modid" to modId,
         "version" to properties["version"] as String,
         "name" to properties["projectName"] as String,
         "description" to properties["description"],
         "author" to properties["author"] as String,
-        "license" to properties["licence"] as String,
+        "license" to componentLicence,
         "javaTargetVersion" to properties["javaTargetVersion"] as String,
         "modrinth" to modrinthSlug,
         "mcversion" to outlet.mcVersionRange,
