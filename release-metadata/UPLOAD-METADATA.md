@@ -6,12 +6,12 @@ Use the matching description file for each project on both CurseForge and Modrin
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Core | Veinminer (UNOFFICIAL) | Veinminer 1.20.1 Fabric Backport (UNOFFICIAL) | Fabric | 1.20.1 | AGPL-3.0-only | `veinminer-1201-fabric-backport` | `nqAgcbUv` | `jOTkf12d` | `1743938` | `9169352` |
 | Hotkey | Veinminer Hotkey (UNOFFICIAL) | Veinminer Hotkey 1.20.1 Fabric Backport (UNOFFICIAL) | Fabric, client-only | 1.20.1 | LGPL-3.0-only | `veinminer-hotkey-1201-fabric-backport` | `JaGV5o85` | `nMhN1l2F` | `1743940` | `9169361` |
-| Enchantment | Veinminer Enchantment (UNOFFICIAL) | Veinminer Enchantment 1.20.1 Fabric Backport (UNOFFICIAL) | Fabric | 1.20.1 | LGPL-3.0-only | `veinminer-enchantment-1201-fabric-backport` | Pending new project | Pending | Pending new project | Pending |
+| Enchantment | Veinminer Enchantment (UNOFFICIAL) | Veinminer Enchantment 1.20.1 Fabric Backport (UNOFFICIAL) | Fabric | 1.20.1 | LGPL-3.0-only | `veinminer-enchantment-1201-fabric-backport` | Pending new project | Pending | `1744153` | `9169394` |
 
 ## Current moderation state
 
 - Modrinth: both project records are `draft` with `requested_status=approved`; both uploaded versions are `listed` beta versions. Draft projects are not yet publicly approved.
-- CurseForge: both projects remain `New` and are awaiting moderator approval; neither project is public yet. The new `.2` core and Hotkey files are uploaded and their CDN downloads match the local JARs by SHA-256.
+- CurseForge: all three projects remain `New` and are awaiting moderator approval; none is public yet. The new `.2` Core, Hotkey, and Enchantment files are uploaded, and their CDN downloads match the local JARs by SHA-256.
 - CurseForge release options are set to publish each beta file automatically after approval.
 
 ## Uploaded artifact verification
@@ -29,6 +29,7 @@ The 2.11.2-hari.2 CurseForge uploads were also downloaded from the CDN and match
 | --- | ---: | ---: | --- |
 | Core | `9169352` | 654,530 | `0AB2D251FB1953B7E09314E94E8D10D1E10860F46B467564200C6D6C6E254BF3` |
 | Hotkey | `9169361` | 183,905 | `E1E968FE0A7ABC8F47875A6F5730A9DF6AC483487FB6BBAFCB8EF142057D9B2B` |
+| Enchantment | `9169394` | 184,851 | `03C528B93B994274D54DD84246E3731756BA79CABB07D85DA622149A6D8548C8` |
 
 ## Current local build artifacts for 2.11.2-hari.2
 
@@ -42,8 +43,8 @@ These are the release candidates built from the current source. They are distinc
 
 ## Dependencies
 
-- Modrinth metadata links the Hotkey project as a required dependency of the core add-on and the Hotkey add-on as optional for the core.
-- The Hotkey description says it requires the core. CurseForge does not yet expose either unapproved project in its relation picker, so add the required/optional project relations after approval.
+- Modrinth metadata marks the core as required for the Hotkey add-on and the Hotkey add-on as optional for the core.
+- The Hotkey and Enchantment descriptions say they require the core. CurseForge's relation picker returned no options while the projects are unapproved; add the required/optional project relations after approval.
 
 ## Candidate gap checked 2026-10-14
 
