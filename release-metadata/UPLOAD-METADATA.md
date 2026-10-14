@@ -34,4 +34,3 @@ The upstream Modrinth version API returned eight Fabric versions of Veinminer ta
 ## Source and icons
 
 The public source is [JustHari01/Veinminer-1.20.1-Fabric-Backport](https://github.com/JustHari01/Veinminer-1.20.1-Fabric-Backport). Project icon files are in `release-assets/`. CurseForge PNGs are 512×512 and exceed its 400×400 minimum. Modrinth JPEGs are 512×512 and under its 256 KiB icon limit.
-
