@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "de.miraculixx.veinminerClient.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinMouseHandler"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
